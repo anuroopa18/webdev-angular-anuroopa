@@ -1,0 +1,16 @@
+<h1>{{message}}</h1>
+<h1>Courses({{courses.length}})</h1>
+<ul>
+  <li *ngFor="let course of courses" class="list-item">
+    {{course.title}}
+    <button (click)="deleteCourse(course.id)"
+         class="btn btn-danger">
+Delete
+</button>
+  </li>
+  <input [(ngModel)]="courseTitle"
+	class="form-control"/>
+  <button (click)="addCourse(courseTitle)">
+    Add Course
+    </button>
+</ul>
