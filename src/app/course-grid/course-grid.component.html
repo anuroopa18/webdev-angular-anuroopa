@@ -1,13 +1,21 @@
-<h2>Course Grid {{courses.length}}</h2>
+<div class="container-fluid">
+<h2>Courses</h2>
 <div class="row">
     <div *ngFor="let course of courses" class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{course.title}}</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a routerLink="/course/{{course.id}}" class="btn btn-primary">Go somewhere</a>
-          <a routerLink="/course/{{course.id}}/section" class="btn btn-primary">Enroll</a>
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=59f17a21ae8a708059646146af380320&auto=format&fit=crop&w=1950&q=80" alt="Card image"  style="width:100%">
+         <p>Welcome to white board! Get started by clicking any of the below links!</p>
+         <p>&nbsp;</p>
+         <div class="container-fluid" style="display: flex; justify-content: flex-end;width: 108%">
+           <a routerLink="/course/{{course.id}}" class="btn btn-dark margin"><i class="fa fa-eye"></i>&nbsp;View</a>
+           
+            <a routerLink="/course/{{course.id}}/section" class="btn btn-dark margin"><i class="fa fa-plus-circle"></i>&nbsp;Enroll</a>
+          </div>
+          
         </div>
       </div>
     </div>
+  </div>
    

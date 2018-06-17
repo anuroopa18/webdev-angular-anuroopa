@@ -14,7 +14,6 @@ export class CourseNavigatorComponent implements OnInit {
   modules = [];
 
   selectCourse(courseId){
-    alert(courseId)
     this.service.findAllModulesForCourses(courseId)
     .then(modules => this.modules = modules);
 
