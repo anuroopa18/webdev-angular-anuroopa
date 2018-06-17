@@ -8,7 +8,8 @@
 
   <ul class="list-group">
     <li *ngFor="let section of sections" class="list-group-item">{{section.name}}
-        <button class="float-right btn btn-primary">Enroll</button>
+        <button (click)="enroll(section)"
+                class="float-right btn btn-primary">Enroll</button>
     </li>
     
   </ul>

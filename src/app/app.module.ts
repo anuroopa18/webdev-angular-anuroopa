@@ -17,9 +17,6 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { LessonServiceClient } from '../services/lesson.service.client';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import { WidgetServiceClient } from '../services/widget.service.client';
-import { LoginComponentComponent } from './login-component/login-component.component';
-import { RegisterComponentComponent } from './register-component/register-component.component';
-import { ProfileComponentComponent } from './profile-component/profile-component.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -40,9 +37,6 @@ import { SectionServiceClient } from '../services/section.service.client';
     ModuleListComponent,
     LessonTabsComponent,
     WidgetListComponent,
-    LoginComponentComponent,
-    RegisterComponentComponent,
-    ProfileComponentComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
