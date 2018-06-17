@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h1>Profile</h1>
+  
+    <input [(ngModel)]="username"
+           placeholder="username"
+           class="form-control"/>
+    <input [(ngModel)]="firstName"
+           placeholder="first name"
+           class="form-control"/>
+    <input [(ngModel)]="lastName"
+           placeholder="lastName"
+           class="form-control"/>
+    <input [(ngModel)]="email"
+           placeholder="email"
+           class="form-control"/>
+    <button (click)="update()"
+            class="btn btn-primary btn-block">
+      Update
+    </button>
+  
+    <a (click)="logout()" >Logout</a>
+    <a routerLink="/home">Home</a>
+  
+  </div>
