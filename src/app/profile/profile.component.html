@@ -1,24 +1,69 @@
-<div class="container-fluid">
-    <h1>Profile</h1>
-  
-    <input [(ngModel)]="username"
-           placeholder="username"
-           class="form-control"/>
-    <input [(ngModel)]="firstName"
-           placeholder="first name"
-           class="form-control"/>
-    <input [(ngModel)]="lastName"
-           placeholder="lastName"
-           class="form-control"/>
-    <input [(ngModel)]="email"
-           placeholder="email"
-           class="form-control"/>
-    <button (click)="update()"
-            class="btn btn-primary btn-block">
-      Update
-    </button>
 
-    <h2>Sections{{sections.length}}</h2>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:75px;">
+      <div>
+          <h2><i class="fa fa-bars"></i>&nbsp;&nbsp;White Board</h2>
+        </div>
+    </nav>
+  <div class="container">
+     <div class="row">
+      <div class='col-md-3'></div>
+      <div class="col-md-6"><div></div>
+        <div class="card">
+            <h2 class="loginHeader"> Profile </h2>
+            <div >
+              <label for="username" class="fields">Username</label>
+              <input [(ngModel)]="username"
+              placeholder="Username"
+              class="form-control form-control-lg"/>
+            </div>
+            <div>
+              <label for="firstName"  class="fields">Firstname</label>
+              <input [(ngModel)]="firstName"
+           placeholder="First Name"
+           class="form-control form-control-lg"/>
+            </div>
+            <div>
+                <label for="lastName"  class="fields">LastName</label>
+                <input [(ngModel)]="lastName"
+           placeholder="Last Name"
+           class="form-control form-control-lg"/>
+              </div>
+              <div>
+                  <label for="email"  class="fields">Email</label>
+                  <input [(ngModel)]="email"
+                  placeholder="email@abc.com"
+                  class="form-control form-control-lg"/>
+                </div>
+
+                <div>
+                    <label for="phone"  class="fields">Phone</label>
+                    <input [(ngModel)]="phone"
+                    placeholder="(617)-834-2580"
+                    class="form-control form-control-lg"/>
+                  </div>
+                  <div>
+                      <label for="address"  class="fields">Address</label>
+                      <input [(ngModel)]="address"
+                      placeholder="Unit 1, Park Drive, Boston - MA"
+                      class="form-control form-control-lg"/>
+                    </div>
+            <p></p>
+            <div>
+        <button (click)="update(username,firstName,lastName,email,phone,address)"
+        class="btn btn-lg btn-dark btn-block">
+        <i class="fa fa-refresh"></i>&nbsp;Update
+    </button>
+           </div>
+           <div>
+              <a (click)="logout()" >Logout</a>
+           <a routerLink="/home" style="float: right;">Home</a>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'></div>
+    </div>
+  </div>
+  <h2>Sections{{sections.length}}</h2>
     <ul class="list-group">
       <li *ngFor="let enrollment of sections" class="list-group-item">
          {{enrollment.section.name}}
@@ -26,7 +71,7 @@
       </li>
     </ul>
   
-    <a (click)="logout()" >Logout</a>
-    <a routerLink="/home">Home</a>
+   
+   
   
-  </div>
+  

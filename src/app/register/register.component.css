@@ -1,0 +1,27 @@
+h2{
+    color:white;
+    
+}
+
+.loginHeader{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px;
+    color: black;
+    text-align: center;
+
+}
+
+a{
+    color: black;
+}
+
+.fields{
+    font-size:20px;
+}
+
+.card{
+    padding: 20px;
+    background-color: lightgrey;
+    margin-top: 20%;
+}

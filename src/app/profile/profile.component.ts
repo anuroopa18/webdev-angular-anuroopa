@@ -16,19 +16,28 @@ export class ProfileComponent implements OnInit {
 user:{};
 username;
 password;
+firstName;
+lastName;
+email;
+phone;
+address;
 sections =[];
 
-update(user) {
-  console.log(user);
-}
 
 logout(){
   this.service.logout().then(() => this.router.navigate(['login']))
 }
 
+update(username,firstName,lastName,email,phone,address){
+  this.service.update(username,firstName,lastName,email,phone,address)
+  .then((() => alert('Details updated successfully!')))
+}
+
 
   ngOnInit() {
-    this.service.profile().then(user => this.username = user.username);
+    this.service.profile().then(user => 
+      this.username = user.username
+    );
     this.sectionService.findSectionsForStudent()
     .then(sections => this.sections = sections)
   }

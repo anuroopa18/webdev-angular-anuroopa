@@ -1,16 +1,41 @@
-<div class="container-fluid">
-    <h1>Login</h1>
-    <input [(ngModel)]="username"
-           placeholder="username"
-           class="form-control"/>
-    <input [(ngModel)]="password"
-           placeholder="password"
-           class="form-control" type="password"/>
-    <button (click)="login(username, password)"
-            class="btn btn-primary btn-block">
-      Login
-    </button>
-  
-    <a routerLink="/register">Register</a>
-    <a routerLink="/home">Home</a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:75px;">
+    <div>
+        <h2><i class="fa fa-bars"></i>&nbsp;&nbsp;White Board</h2>
+      </div>
+  </nav>
+<div class="container">
+   <div class="row">
+    <div class='col-md-3'></div>
+    <div class="col-md-6"><div></div>
+      <div class="card">
+        <p>&nbsp;</p>
+          <h2 class="loginHeader"> Login </h2>
+          <div >
+            <label for="username-email" class="fields">Username</label>
+            <input [(ngModel)]="username" placeholder="Username" class="form-control form-control-lg" />
+          </div>
+          <div>
+            <label for="password"  class="fields">Password</label>
+            <input [(ngModel)]="password" placeholder="Password" class="form-control form-control-lg" type="password" />
+          </div>
+          <p></p>
+          <div>
+          <button (click)="login(username, password)"  class="btn btn-lg btn-dark btn-block">
+              <i class="fa fa-user"></i>
+
+              Login
+          </button>
+         </div>
+         <div>
+          <a routerLink="/register">Register</a>
+          
+          <a routerLink="/home" style="float: right;">Home</a>
+          <p>&nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'></div>
   </div>
+</div>
+
