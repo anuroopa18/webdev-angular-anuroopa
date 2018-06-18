@@ -17,11 +17,14 @@ export class RegisterComponent implements OnInit {
             if(response.errorMsg === "Username exists")
             {
               alert("Username already exists");
+             
+             
             }
             else{
               this.service
-           .createUser(username,password,password2)
-           .then((() => this.router.navigate(['profile']) ))
+              .createUser(username,password,password2)
+              .then((() => this.router.navigate(['profile']) ))
+              
             }
             
     })
