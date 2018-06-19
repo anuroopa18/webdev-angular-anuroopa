@@ -4,10 +4,9 @@
       <i class="fa fa-bars"></i>&nbsp;&nbsp;White Board</h2>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class='col-md-3'></div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div></div>
       <div class="card">
         <h2 class="loginHeader"> Profile </h2>
@@ -40,7 +39,6 @@
         <div>
           <label for="email" class="fields">Email</label>
           <input [(ngModel)]="email" placeholder="email@abc.com" id="emails" name="emails" #emails="ngModel" required class="form-control form-control-lg" />
-      
         </div>
         <div *ngIf="emails.invalid" class="alert alert-danger">
             <div *ngIf="emails.errors.required">
@@ -82,12 +80,29 @@
         </div>
       </div>
     </div>
-    <div class='col-md-3'></div>
+    <div class="col-md-4">
+        <div class="card">
+            <h2 style="color: black">Courses{{sections.length}}</h2>
+      <ul class="list-group">
+        <li *ngFor="let enrollment of sections" class="list-group-item">
+          {{enrollment.section.name}} ({{enrollment.section.seats}})
+        </li>
+      </ul>
+  
+        </div>
+        </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <h2 style="color: black">Sections{{sections.length}}</h2>
+      <ul class="list-group">
+        <li *ngFor="let enrollment of sections" class="list-group-item">
+          {{enrollment.section.name}} ({{enrollment.section.seats}})
+        </li>
+      </ul>
+  
+        </div>
+        </div>
+    
   </div>
 </div>
-<h2>Sections{{sections.length}}</h2>
-<ul class="list-group">
-  <li *ngFor="let enrollment of sections" class="list-group-item">
-    {{enrollment.section.name}} ({{enrollment.section.seats}})
-  </li>
-</ul>
