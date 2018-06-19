@@ -2,22 +2,38 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark" style="height:75px; background-color: #4f5359">
           <div>
-            <span className="navbar-brand" style="color:white;">
+            <span class="navbar-brand" style="color:white;">
                    
                  <h2><i class="fa fa-bars"></i>&nbsp;&nbsp;White Board</h2>
                 </span>
             </div>
-               <div style="float: right; display: inline-flex; justify-content: flex-end;width: 88%">
-               <a routerLink="/login" class="btn btn-lg btn-dark margin">Login&nbsp; <i class="fa fa-user"></i></a>
-               <a routerLink="/register" class="btn btn-lg btn-dark margin">Register&nbsp; <i class="fa fa-user-plus"></i></a>
-               </div>
+              <div class="ml-auto">
+               <a routerLink="/login" [hidden]="loggedIn" class="btn btn-lg btn-dark margin">Login&nbsp; <i class="fa fa-user"></i></a>
+               <a routerLink="/register" [hidden]="loggedIn" class="btn btn-lg btn-dark margin">Register&nbsp; <i class="fa fa-user-plus"></i></a>
+               <a (click)="logout()" [hidden]="hide" class="btn btn-lg btn-dark margin" style="color:white">Logout&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </div>
+            
+               
         </nav>
         
         </div>
         
-
-<app-course-grid></app-course-grid>
+<div [hidden]="hide"  style="margin-top: 2%; width:50%; margin-left:1%">
+        <h2 style="color: black"> Enrolled Courses</h2>
+        <div class="card" >      
+          <ul class="list-group" >
+            <li *ngFor="let enrollment of courseName" class="list-group-item" style="background-color: lightgray">
+              {{enrollment.title}}
+            </li>
+          </ul>
         
+            </div>
+</div>
+
+
+<div style="margin-top: 2%">
+<app-course-grid></app-course-grid>
+</div>
 
 
 

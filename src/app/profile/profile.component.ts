@@ -64,7 +64,7 @@ update(username,firstName,lastName,email,phone,address){
     .then(courses => {
       courses.map(result =>{
         this.courseService.findCourseById(result.course).
-        then(course => console.log(this.courseName.push(course)))
+        then(course => this.courseName.push(course))
       }, this)
     
   })

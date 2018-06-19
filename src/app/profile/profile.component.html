@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-4">
       <div></div>
-      <div class="card">
+      <div class="card" style="margin-top: 20%">
         <h2 class="loginHeader"> Profile </h2>
         <div>
           <label for="username" class="fields">Username</label>
@@ -80,8 +80,11 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-        <div class="card">
+    
+    
+    <div class="col-md-8">
+     
+        <div class="card" style="margin-top: 10%">
             <h2 style="color: black">Courses</h2>
       <ul class="list-group">
         <li *ngFor="let enrollment of courseName" class="list-group-item">
@@ -90,19 +93,36 @@
       </ul>
   
         </div>
+      
+        <div >
+            <div class="card" style="margin-top: 5%">
+                <h2 style="color: black">Sections</h2>
+          
+               
+              <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                  <th>Section Name</th>
+                  <th>Number of Seats</th>
+                </tr>
+              </thead>
+              <tbody style="background-color: white;">
+                <tr *ngFor="let enrollment of sections">
+                    <td>{{enrollment.section.name}}</td>
+                    <td>{{enrollment.section.seats}}</td>
+                </tr>
+              </tbody>
+
+              </table>
+           
+      
+            </div>
+            </div>
         </div>
+        
     
-    <div class="col-md-4">
-        <div class="card">
-            <h2 style="color: black">Sections{{sections.length}}</h2>
-      <ul class="list-group">
-        <li *ngFor="let enrollment of sections" class="list-group-item">
-          {{enrollment.section.name}} ({{enrollment.section.seats}})
-        </li>
-      </ul>
-  
-        </div>
-        </div>
+    
+      
     
   </div>
 </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceClient } from '../../services/user.service.client';
+import { Router } from '@angular/router';
+import { SectionServiceClient } from '../../services/section.service.client';
+import { CourseServiceClient } from '../../services/course.service.client';
 
 @Component({
   selector: 'app-white-board',
@@ -7,9 +11,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhiteBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserServiceClient,
+              private router:Router,
+              private sectionService:SectionServiceClient,
+              private courseService:CourseServiceClient) { }
+  
+  loggedIn = false;
+  hide=false;
+  course={};
+  courses=[];
+  courseName=[];
 
-  ngOnInit() {
+  logout(){
+    this.userService.logout().then(() => this.router.navigate(['login']))
   }
+  
+  ngOnInit() {
+    this.userService.checkUserLogIn()
+   .then(response => {
+    if(response.msg === "User is logged in")
+    {
+       this.loggedIn =true;
+       this.hide=false;
+       this.sectionService.findCoursesForStudent().
+      then(courses => this.courses =courses)
+      .then(courses => {
+        courses.map(result =>{
+          this.courseService.findCourseById(result.course).
+          then(course => console.log(this.courseName.push(course)))
+        }, this)
+      
+    })
 
+    }
+    else{
+      this.loggedIn = false;
+      this.hide=true;
+    }
+  })
+
+     
+      
+     
+  }
 }
