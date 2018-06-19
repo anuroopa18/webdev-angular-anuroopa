@@ -6,8 +6,8 @@ export class SectionServiceClient{
         .then(response => response.json());
     }
 
-    enrollStudentInSection(sectionId){
-        return fetch('http://localhost:3000/api/section/'+sectionId+ '/enrollment',{ 
+    enrollStudentInSection(sectionId,courseId){
+        return fetch('http://localhost:3000/api/course/'+courseId+'/section/'+sectionId+ '/enrollment',{ 
             method:'post',
             credentials:'include'
         })
@@ -15,6 +15,12 @@ export class SectionServiceClient{
 
     findSectionsForStudent(){
         return fetch('http://localhost:3000/api/student/section',{
+            credentials:'include'
+        }).then(response => response.json());
+    }
+
+    findCoursesForStudent(){
+        return fetch('http://localhost:3000/api/student/course',{
             credentials:'include'
         }).then(response => response.json());
     }

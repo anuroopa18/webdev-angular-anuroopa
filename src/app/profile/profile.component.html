@@ -82,10 +82,10 @@
     </div>
     <div class="col-md-4">
         <div class="card">
-            <h2 style="color: black">Courses{{sections.length}}</h2>
+            <h2 style="color: black">Courses</h2>
       <ul class="list-group">
-        <li *ngFor="let enrollment of sections" class="list-group-item">
-          {{enrollment.section.name}} ({{enrollment.section.seats}})
+        <li *ngFor="let enrollment of courseName" class="list-group-item">
+          {{enrollment.title}}
         </li>
       </ul>
   

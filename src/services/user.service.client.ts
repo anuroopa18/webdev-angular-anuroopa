@@ -1,5 +1,12 @@
 export class UserServiceClient {
 
+    checkUserLogIn(){
+        return fetch('http://localhost:3000/api/checkUserLogin',{
+            credentials:'include'
+        }).then(response => response.json());
+
+    }
+
     findUserById(userId) {
         return fetch('http://localhost:3000/api/user/' + userId, {
             credentials: 'include'

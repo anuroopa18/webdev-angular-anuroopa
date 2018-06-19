@@ -9,4 +9,6 @@ export class CourseServiceClient{
         return fetch('http://localhost:8080/api/course' + '/' + courseId)
         .then(response => response.json())
     }
+
+    
 }

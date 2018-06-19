@@ -35,7 +35,7 @@ export class SectionListComponent implements OnInit {
 
   enroll(section){
     //alert(section._id);
-    this.service.enrollStudentInSection(section._id)
+    this.service.enrollStudentInSection(section._id,section.courseId)
     .then(() => {
       this.router.navigate(['profile']);
     });

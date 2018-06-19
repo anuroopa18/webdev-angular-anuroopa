@@ -11,7 +11,7 @@
          <div class="container-fluid" style="display: flex; justify-content: flex-end;width: 108%">
            <a routerLink="/course/{{course.id}}" class="btn btn-dark margin"><i class="fa fa-eye"></i>&nbsp;View</a>
            
-            <a routerLink="/course/{{course.id}}/section" class="btn btn-dark margin"><i class="fa fa-plus-circle"></i>&nbsp;Enroll</a>
+            <a (click)="btnEnroll(course.id)" class="btn btn-dark margin" style="color: white"><i class="fa fa-plus-circle"></i>&nbsp;Enroll</a>
           </div>
           
         </div>

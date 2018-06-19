@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserServiceClient } from '../../services/user.service.client';
 import { Router } from '@angular/router';
 import { SectionServiceClient } from '../../services/section.service.client';
+import { CourseServiceClient } from '../../services/course.service.client';
+import { CourseGridComponent } from '../course-grid/course-grid.component';
+
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +15,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service:UserServiceClient
               ,private router: Router,
-              private sectionService:SectionServiceClient) { }
+              private sectionService:SectionServiceClient,
+              private courseService:CourseServiceClient) { }
 user:{};
 username;
 password;
@@ -22,7 +26,14 @@ email;
 phone;
 address;
 sections =[];
+courses=[];
+course={};
+courseName=[];
 
+
+getCourses(){
+  
+}
 
 logout(){
   this.service.logout().then(() => this.router.navigate(['login']))
@@ -47,6 +58,17 @@ update(username,firstName,lastName,email,phone,address){
     );
     this.sectionService.findSectionsForStudent()
     .then(sections => this.sections = sections)
+
+    this.sectionService.findCoursesForStudent().
+    then(courses => this.courses =courses)
+    .then(courses => {
+      courses.map(result =>{
+        this.courseService.findCourseById(result.course).
+        then(course => console.log(this.courseName.push(course)))
+      }, this)
+    
+  })
+   
   }
 
 }
