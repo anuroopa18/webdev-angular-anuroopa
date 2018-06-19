@@ -14,15 +14,9 @@
         <div>
           <label for="username" class="fields">Username</label>
           <input [(ngModel)]="username" placeholder="Username" id="name" name="name" #name="ngModel" class="form-control form-control-lg"
-            required/>
+            disabled/>
         </div>
-        <div *ngIf="name.invalid" class="alert alert-danger">
-
-          <div *ngIf="name.errors.required">
-            Username is required.
-          </div>
-
-        </div>
+       
         <div>
           <label for="firstName" class="fields">Firstname</label>
           <input [(ngModel)]="firstName" placeholder="First Name" id="fname" name="fname" #fname="ngModel" required class="form-control form-control-lg" />

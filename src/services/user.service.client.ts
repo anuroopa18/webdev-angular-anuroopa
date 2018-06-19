@@ -12,7 +12,7 @@ export class UserServiceClient {
         return fetch('http://localhost:3000/api/users/' + username, {
             credentials: 'include'
         })
-            .then(response => response.json());
+        .then(response => response.json());
     }
 
     login(username, password) {
@@ -28,7 +28,7 @@ export class UserServiceClient {
                 'content-type': 'application/json'
             }
 
-        })
+        }).then(response => response.json());
     }
     logout() {
         return fetch('http://localhost:3000/api/logout', {
@@ -58,6 +58,7 @@ export class UserServiceClient {
         });
     }
 
+
     
     update(username, firstName, lastName, email, phone, address) {
         const user = {
@@ -69,7 +70,7 @@ export class UserServiceClient {
             address: address
 
         };
-       
+
         return fetch('http://localhost:3000/api/user', {
             body: JSON.stringify(user),
             credentials: 'include',
@@ -78,6 +79,7 @@ export class UserServiceClient {
                 'content-type': 'application/json'
             }
         });
+    
     
       
 

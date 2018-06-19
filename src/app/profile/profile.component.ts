@@ -36,7 +36,14 @@ update(username,firstName,lastName,email,phone,address){
 
   ngOnInit() {
     this.service.profile().then(user => 
-      this.username = user.username
+      {
+      this.username = user.username;
+      this.firstName = user.firstName;
+      this.lastName = user.lastName;
+      this.email = user.email;
+      this.phone = user.phone;
+      this.address = user.address;
+      }
     );
     this.sectionService.findSectionsForStudent()
     .then(sections => this.sections = sections)
