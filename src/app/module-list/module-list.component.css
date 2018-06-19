@@ -1,8 +1,26 @@
 .active.wbdv{
-    background-color: hotpink;
-    border-color:hotpink;
+    background-color:#2485e5;
+    border-color:#2485e5;
 }
 
 .active.wbdv a{
+    color:white;
+}
+
+.addCss{
+              background-color: #343a40;
+                padding-bottom:100%;
+                padding-top:20px;
+                margin-bottom:3px;
+                margin-right:-1px;
+                max-height: 100%
+}
+
+li{
+    background-color:#4f5359;
+    margin-bottom:3px;
+    
+}
+a{
     color:white;
 }

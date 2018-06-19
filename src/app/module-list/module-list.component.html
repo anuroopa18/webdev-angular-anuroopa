@@ -1,13 +1,15 @@
-<h3>Module List for course {{courseId}}</h3>
-<div class="row">
-  <div class="col-4">
-      <ul class="list-group">
-          <li class="list-group-item active" >Modules</li>
-        <li [ngClass]="{'active':module.id == moduleId}" *ngFor="let module of modules"  class="list-group-item wbdv"><a routerLink="/course/{{courseId}}/module/{{module.id}}">{{module.title}}</a></li>
-        
+
+<div class="row container-fluid">
+  <div class="col-4 addCss">
+      <ul class="list-group ">
+        <li [ngClass]="{'active':module.id == moduleId}" *ngFor="let module of modules"  class="list-group-item wbdv">
+          <a routerLink="/course/{{courseId}}/module/{{module.id}}">{{module.title}}</a><i class="fa fa-1x fa-times" style="float:right; color: white"></i></li>
       </ul>
-  </div>
-  <div class="col-8">
+  
+</div>
+  <div class="col-8" style="margin-top: 23px">
     <app-lesson-tabs></app-lesson-tabs>
   </div>
 </div>
+
+
