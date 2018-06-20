@@ -25,9 +25,8 @@
             <li (click)="selectSection(section._id)"
             *ngFor="let section of sections" style="max-width: 100%;margin-left: 5px;color:white;padding-top: 15px"
             class="nav-item sectionCss" 
-            [ngClass]="{'active':section._id === selectedSectionId}"
-            >
-             {{section.name}}
+            [ngClass]="{'active':section._id === selectedSectionId}">
+             {{section.name}} <i  (click)="delete(section._id)" class="fa fa-minus-circle" aria-hidden="true"></i>
             </li>
             <div [hidden]="!courseSelected" style="margin-left:5px">
                 <button class="btn btn-dark" (click)="addSection()" style="height:51px"><i class="fa fa-plus" aria-hidden="true"></i>
@@ -35,8 +34,27 @@
             </div>
             
           </ul>
+          <div [hidden]="hideSectionInfo">
+              <div class="card" style="margin-top: 2%">
+                  <h2 class="loginHeader"> Section Info</h2>
+                  <div>
+                    <label for="name" class="fields">Section Name</label>
+                    <input [(ngModel)]="name" placeholder="Section Name" class="form-control form-control-lg"/>
+                  </div>
+                  <div>
+                      <label for="seats" class="fields">Seats</label>
+                      <input [(ngModel)]="seats" placeholder="Number of seats" class="form-control form-control-lg"/>
+                    </div>
+                    <p></p>
+                    <div>
+                        <button (click)="update(name,seats,selectedSectionId)" class="btn btn-lg btn-dark btn-block">
+                          <i class="fa fa-refresh"></i>&nbsp;Update
+                        </button>
+                      </div>
+                  </div>
+                  
+          </div>
           
-         
         </div>
 
         

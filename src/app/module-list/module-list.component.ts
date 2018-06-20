@@ -25,8 +25,10 @@ export class ModuleListComponent implements OnInit {
     }
    loadModules(courseId){
       this.courseId= courseId;
+      if(courseId !== undefined){
       this.service.findModuleForCourse(courseId)
       .then(modules => this.modules =modules);
+      }
    }
 
   ngOnInit() {

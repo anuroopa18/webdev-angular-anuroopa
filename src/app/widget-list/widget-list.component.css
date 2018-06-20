@@ -1,0 +1,8 @@
+.divClass{
+    border: solid 1px ;
+    border-color:lightgrey;
+    background-color:lightgrey; 
+    padding:20px; 
+    margin-top:2px
+    
+}

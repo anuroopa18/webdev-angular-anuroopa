@@ -27,6 +27,20 @@ a{
     background-color:#4f5359!important;
 }
 
+.loginHeader{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px;
+    color: black;
+    text-align: center;
+
+}
+
+.fields{
+    font-size:20px;
+}
+
+
 
 .active.wbdv a{
     color:white;
@@ -39,6 +53,11 @@ a{
     background-color: #818386!important;
 }
 
+.card{
+    padding: 20px;
+    background-color: lightgrey;
+    
+}
 
 
 .wbdv{
