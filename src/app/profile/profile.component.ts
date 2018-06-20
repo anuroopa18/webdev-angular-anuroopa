@@ -29,7 +29,7 @@ sections =[];
 courses=[];
 course={};
 courseName=[];
-
+isAdmin=false;
 
 getCourses(){
   
@@ -55,7 +55,14 @@ update(username,firstName,lastName,email,phone,address){
       this.phone = user.phone;
       this.address = user.address;
       }
-    );
+    ).then(() => {
+      if(this.username == "admin"){
+        this.isAdmin= true;    
+      }
+    });
+
+    
+
     this.sectionService.findSectionsForStudent()
     .then(sections => this.sections = sections)
 

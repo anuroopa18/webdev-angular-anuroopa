@@ -35,6 +35,6 @@ export class SectionServiceClient{
                  'content-type':'application/json'
              }
 
-      });
+      }).then(response => response.json());
     }
 }

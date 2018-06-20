@@ -24,6 +24,7 @@ import { UserServiceClient } from '../services/user.service.client';
 import { SectionListComponent } from './section-list/section-list.component';
 import { SectionServiceClient } from '../services/section.service.client';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    SectionListComponent
+    SectionListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

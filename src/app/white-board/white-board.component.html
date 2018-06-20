@@ -8,9 +8,10 @@
                 </span>
             </div>
               <div class="ml-auto">
-               <a routerLink="/login" [hidden]="loggedIn" class="btn btn-lg btn-dark margin">Login&nbsp; <i class="fa fa-user"></i></a>
-               <a routerLink="/register" [hidden]="loggedIn" class="btn btn-lg btn-dark margin">Register&nbsp; <i class="fa fa-user-plus"></i></a>
-               <a (click)="logout()" [hidden]="hide" class="btn btn-lg btn-dark margin" style="color:white">Logout&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+               <a routerLink="/login" [hidden]="loggedIn" class="btn btn-lg btn-dark margin"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a>
+               <a routerLink="/register" [hidden]="loggedIn" class="btn btn-lg btn-dark margin"><i class="fa fa-user-plus"></i>&nbsp; Register </a>
+               <a (click)="logout()" [hidden]="hide" class="btn btn-lg btn-dark margin" style="color:white"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+               <a routerLink="/profile" [hidden]="hide" class="btn btn-lg btn-dark margin"><i class="fa fa-user"></i>&nbsp;Profile</a>
             </div>
             
                
