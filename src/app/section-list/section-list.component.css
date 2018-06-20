@@ -1,0 +1,13 @@
+.loginHeader{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px;
+    color: black;
+    text-align: center;
+
+}
+.card{
+    padding: 20px;
+    background-color: lightgrey;
+    
+}

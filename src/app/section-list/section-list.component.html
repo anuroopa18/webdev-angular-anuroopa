@@ -1,16 +1,18 @@
-<div class="container-fluid">
-  <h1>Sections For Course:{{courseId}}</h1>
-  <input [(ngModel)] = "sectionName"
-  placeholder="Section Name" class="form-control"/>
-  <input [(ngModel)] = "seats"
-  placeholder="Seats available" class="form-control"/>
-  <button (click)="createSection(sectionName,seats)" class="btn btn-success btn-block">Add Section</button>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:75px;">
+    <div>
+        <h2 style="color:white"><i class="fa fa-bars" ></i>&nbsp;&nbsp;White Board</h2>
+      </div>
+      <div class="ml-auto">
+          <a routerLink="/home" class="btn btn-lg btn-dark margin" style="color:white"><i class="fa fa-home" aria-hidden="true"></i> &nbsp;Home</a>         
+        </div>
+  </nav>
+<div class="container-fluid" style="margin-top:2px">
+ <div class="card" style="margin-top: 2%">
+  <h2 class="loginHeader">Sections for Course {{course.title}}</h2>
   <ul class="list-group">
     <li *ngFor="let section of sections" class="list-group-item">{{section.name}}
         <button (click)="enroll(section)"
                 class="float-right btn btn-primary">Enroll</button>
     </li>
-    
   </ul>
 </div>

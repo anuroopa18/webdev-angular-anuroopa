@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SectionServiceClient } from '../../services/section.service.client';
+import { CourseServiceClient } from '../../services/course.service.client';
 
 @Component({
   selector: 'app-section-list',
@@ -11,7 +12,8 @@ export class SectionListComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
               private service:SectionServiceClient,
-              private router: Router ) { 
+              private router: Router ,
+              private courseService:CourseServiceClient) { 
     this.route.params.subscribe(params => this.loadSections(params['courseId']))
   }
 
@@ -19,6 +21,7 @@ export class SectionListComponent implements OnInit {
   seats:'';
   courseId;
   sections = [];
+  course={};
   loadSections(courseId){
      this.courseId = courseId;
      this.service.findSectionsForCourse(courseId).
@@ -34,15 +37,22 @@ export class SectionListComponent implements OnInit {
   }
 
   enroll(section){
-    //alert(section._id);
     this.service.enrollStudentInSection(section._id,section.courseId)
-    .then(() => {
-      this.router.navigate(['profile']);
-    });
+    .then(response => {
+       if(response.msg == "Cannot enroll"){
+          alert("Seats full!");
+       }
+       else{
+        this.router.navigate(['profile']);
+       }
+    })
   }
 
 
   ngOnInit() {
+     this.courseService.findCourseById(this.courseId)
+     .then(course => this.course =course)
+
   }
 
 }

@@ -106,13 +106,15 @@
                 <thead class="thead-dark">
                 <tr>
                   <th>Section Name</th>
-                  <th>Number of Seats</th>
+                  <th>Total Seats</th>
+                  <th>Available Seats</th>
                 </tr>
               </thead>
               <tbody style="background-color: white;">
                 <tr *ngFor="let enrollment of sections">
                     <td>{{enrollment.section.name}}</td>
                     <td>{{enrollment.section.seats}}</td>
+                    <td>{{enrollment.section.availableSeats}}</td>
                 </tr>
               </tbody>
 

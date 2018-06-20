@@ -23,8 +23,10 @@ export class AdminComponent implements OnInit {
   sectionSelected = false;
   courseSelected = false;
   section = {};
+  oldSeats;
   name = "";
   hideSectionInfo = false;
+  availableSeats=0;
 
   isEmpty(obj) {
     for (var key in obj) {
@@ -51,10 +53,17 @@ export class AdminComponent implements OnInit {
   }
 
   update(name, seats, sectionId) {
-    this.sectionService.updateSection(name, seats, sectionId)
+    this.sectionService.findSectionById(sectionId)
+    .then(section => this.section = section)
+    .then(section => {
+       this.oldSeats = section.seats;
+       this.availableSeats = section.availableSeats;
+       this.availableSeats = this.availableSeats + Math.abs(this.oldSeats-seats);
+    }).then(() => {
+      this.sectionService.updateSection(name, seats, sectionId,this.availableSeats)
       .then(section => this.section = section)
-      .then(() => alert("Updated successfully!"));
-
+      .then(() => alert("Updated successfully!"))
+    })
   }
 
   loadSections(courseId) {

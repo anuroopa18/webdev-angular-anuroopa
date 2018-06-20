@@ -21,7 +21,7 @@ export class WhiteBoardComponent implements OnInit {
   course={};
   courses=[];
   courseName=[];
-
+  hideEnrolledCourse = false;
   logout(){
     this.userService.logout().then(() => this.router.navigate(['login']))
   }
@@ -39,6 +39,11 @@ export class WhiteBoardComponent implements OnInit {
         courses.map(result =>{
           this.courseService.findCourseById(result.course).
           then(course => console.log(this.courseName.push(course)))
+          .then(() => {
+              if(this.courseName.length === 0){
+                this.hideEnrolledCourse=true;
+              }
+          })
         }, this)
       
     })

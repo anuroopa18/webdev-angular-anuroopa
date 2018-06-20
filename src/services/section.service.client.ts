@@ -10,7 +10,7 @@ export class SectionServiceClient{
         return fetch('http://localhost:3000/api/course/'+courseId+'/section/'+sectionId+ '/enrollment',{ 
             method:'post',
             credentials:'include'
-        })
+        }).then(response => response.json());
     }
 
     findSectionsForStudent(){
@@ -46,10 +46,11 @@ export class SectionServiceClient{
            })
         }
 
-    updateSection(name,seats,sectionId){
+    updateSection(name,seats,sectionId,availableSeats){
         const section = {
             name: name,
-            seats: seats
+            seats: seats,
+            availableSeats:availableSeats
         };
         return fetch('http://localhost:3000/api/section/update/' +sectionId, {
             body: JSON.stringify(section),
@@ -64,7 +65,11 @@ export class SectionServiceClient{
     }
 
     createSection(courseId,name,seats){
-      const section ={courseId,name,seats};
+      const section ={
+          courseId:courseId,
+          name:name,
+          seats:seats,
+          availableSeats:seats};
       return fetch('http://localhost:3000/api/course/'+courseId+'/section',{
              method:'post',
              body: JSON.stringify(section),
