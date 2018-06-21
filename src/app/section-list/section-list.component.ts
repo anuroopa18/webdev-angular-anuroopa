@@ -21,6 +21,7 @@ export class SectionListComponent implements OnInit {
   seats:'';
   courseId;
   sections = [];
+  enrolledSections=[];
   course={};
   loadSections(courseId){
      this.courseId = courseId;
@@ -36,6 +37,11 @@ export class SectionListComponent implements OnInit {
   
   }
 
+  unenroll(section){
+    this.service.unenrollStudentFromSection(section._id)
+    .catch(() => this.router.navigate(['profile']) )
+  }
+
   enroll(section){
     this.service.enrollStudentInSection(section._id,section.courseId)
     .then(response => {
@@ -49,9 +55,15 @@ export class SectionListComponent implements OnInit {
   }
 
 
+
+
   ngOnInit() {
      this.courseService.findCourseById(this.courseId)
      .then(course => this.course =course)
+
+     this.service.findSectionsForStudent()
+     .then(enrolledSections => this.enrolledSections = enrolledSections)
+ 
 
   }
 

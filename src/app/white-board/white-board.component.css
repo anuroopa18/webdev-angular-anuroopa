@@ -14,3 +14,11 @@
 .card{
     background-color: lightgrey;
 }
+.loginHeader{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px;
+    color: black;
+    text-align: center;
+
+}

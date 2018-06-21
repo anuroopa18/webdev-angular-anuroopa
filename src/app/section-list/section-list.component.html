@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:75px;">
     <div>
-        <h2 style="color:white"><i class="fa fa-bars" ></i>&nbsp;&nbsp;White Board</h2>
+        <h2 style="color:white"><i class="fa fa-wordpress" aria-hidden="true"></i>&nbsp;&nbsp;White Board</h2>
       </div>
       <div class="ml-auto">
           <a routerLink="/home" class="btn btn-lg btn-dark margin" style="color:white"><i class="fa fa-home" aria-hidden="true"></i> &nbsp;Home</a>         
@@ -12,7 +12,38 @@
   <ul class="list-group">
     <li *ngFor="let section of sections" class="list-group-item">{{section.name}}
         <button (click)="enroll(section)"
-                class="float-right btn btn-primary">Enroll</button>
+                class="float-right btn btn-lg btn-dark"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;Enroll</button>
     </li>
   </ul>
 </div>
+<div >
+    <div class="card" style="margin-top: 5%">
+        <h2 class="loginHeader">Enrolled Sections</h2>
+  
+       
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>Section Name</th>
+          <th>Total Seats</th>
+          <th>Available Seats</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody style="background-color: white;">
+        <tr *ngFor="let enrollment of enrolledSections">
+            <td>{{enrollment.section.name}}</td>
+            <td>{{enrollment.section.seats}}</td>
+            <td>{{enrollment.section.availableSeats}}</td>
+            <td> <button  (click)="unenroll(enrollment.section)"
+              class="float-right btn btn-lg btn-dark"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;</button></td>
+           
+        </tr>
+      </tbody>
+
+      </table>
+     
+     
+      
+    </div>
+    </div>

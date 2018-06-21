@@ -13,6 +13,13 @@ export class SectionServiceClient{
         }).then(response => response.json());
     }
 
+    unenrollStudentFromSection(sectionId){
+        return fetch('http://localhost:3000/api/unenroll/'+sectionId,{
+            method:'delete',
+            credentials:'include'
+        }).then(response => response.json());
+    }
+
     findSectionsForStudent(){
         return fetch('http://localhost:3000/api/student/section',{
             credentials:'include'
